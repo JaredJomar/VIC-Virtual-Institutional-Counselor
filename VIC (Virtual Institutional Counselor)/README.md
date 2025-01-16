@@ -26,22 +26,6 @@
 
 ---
 
-## **Database Credentials**
-*Hosted on Heroku*  
-**Note: These credentials are temporary and subject to change.**
-
-| Parameter     | Value                                                                                          |
-|---------------|------------------------------------------------------------------------------------------------|
-| **Host**      | `c3cj4hehegopde.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com`                             |
-| **Database**  | `d66psqdohgngqs`                                                                               |
-| **User**      | `u56mshqprpvv6h`                                                                               |
-| **Port**      | `5432`                                                                                        |
-| **Password**  | `p73a2d81b0ad74fcd2470fa936cca4038e153b49f93c46f9583300e9ed4e50bd8`                            |
-| **URI**       | `postgres://u56mshqprpvv6h:<password>@<host>:<port>/<database>`                               |
-| **Heroku CLI**| `heroku pg:psql postgresql-concave-29039 --app nprdb-app-test-fall2024`                        |
-
----
-
 ## **Application Hostname**
 - [App URL](https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/)
 
