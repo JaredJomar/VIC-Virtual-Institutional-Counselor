@@ -1,0 +1,115 @@
+from flask import Flask, jsonify, g  # Import g for connection management
+from myApp.views.class_views import class_blueprint  # Class entity blueprint
+from myApp.views.requisite_views import requisite_blueprint  # Requisite entity blueprint
+# from myApp.views.section_views import section_blueprint  # Section entity blueprint
+# from myApp.views.meeting_views import meeting_blueprint  # Meeting entity blueprint
+# from myApp.views.room_views import room_blueprint  # Room entity blueprint
+from myApp.views.localStatistics_views import statistics_bp  # Local statistics blueprint
+from myApp.extensions import get_db_connection  # Import the database connection function
+from config.heroku_config_pool import DatabaseConfig  # Updated to use heroku_config_pool.py
+import os
+
+def ask_database_choice():
+    """
+    Prompt the user to select the database to use.
+
+    Returns:
+        str: The user's choice as a string ("1" for local, "2" for Heroku).
+    """
+    print("Select the database to use:")
+    print("1. Local database (development)")
+    print("2. Heroku database (production)")
+    choice = input("Enter the number (1 or 2): ").strip()
+    return choice
+
+def create_app():
+    """
+    Create and configure the Flask application.
+
+    This function initializes the Flask app, sets the environment based on user input,
+    configures the database connection, and registers blueprints.
+
+    Returns:
+        Flask: The configured Flask application.
+    """
+    # Ask the user which database to use if not already set
+    if os.getenv("DATABASE_CHOICE") is None:
+        choice = ask_database_choice()
+        os.environ["DATABASE_CHOICE"] = choice
+    else:
+        choice = os.getenv("DATABASE_CHOICE")
+
+    # Set environment based on the user's selection
+    if choice == "1":
+        os.environ["FLASK_ENV"] = "development"
+        from config.local_config import LocalConfig
+        db_url = os.getenv("LOCAL_DATABASE_URL")
+        print("Using the local database.")
+        app_config = LocalConfig.get_db_connection()
+    elif choice == "2":
+        os.environ["FLASK_ENV"] = "production"
+        db_url = os.getenv("HEROKU_DATABASE_URL")
+        print("Using the Heroku database.")
+        DatabaseConfig.init_pool()  # Initialize connection pool for production
+    else:
+        print("Invalid selection. Defaulting to the local database.")
+        os.environ["FLASK_ENV"] = "development"
+        from config.local_config import LocalConfig
+        db_url = os.getenv("LOCAL_DATABASE_URL")
+        app_config = LocalConfig.get_db_connection()
+
+    # Initialize the Flask application
+    app = Flask(__name__)
+    app.config["DATABASE_URL"] = db_url  # Store the database URL
+
+    # Register blueprints
+    app.register_blueprint(class_blueprint, url_prefix='/')  # Register the class blueprint
+    app.register_blueprint(requisite_blueprint, url_prefix='/')  # Register the requisite blueprint
+    # app.register_blueprint(section_blueprint, url_prefix='/')  # Register the section blueprint
+    # app.register_blueprint(meeting_blueprint, url_prefix='/')  # Register the meeting blueprint
+    # app.register_blueprint(room_blueprint, url_prefix='/')  # Register the room blueprint
+    app.register_blueprint(statistics_bp, url_prefix='/')  # Register the local statistics blueprint
+
+    # Database connection management for each request
+    @app.before_request
+    def before_request():
+        """
+        Open a new database connection before handling the request.
+        """
+        if os.getenv("FLASK_ENV") == "production":
+            g.db = DatabaseConfig.get_db_connection()
+        else:
+            g.db = get_db_connection()  # Local database connection if in development
+
+    @app.teardown_request
+    def teardown_request(exception):
+        """
+        Release the database connection back to the pool after request.
+        """
+        db_connection = g.pop('db', None)
+        if db_connection:
+            if os.getenv("FLASK_ENV") == "production":
+                DatabaseConfig.return_connection(db_connection)
+            else:
+                db_connection.close()  # Close local connection if in development
+
+    # Basic test route
+    @app.route("/")
+    def index():
+        """
+        Basic test route to check if the app is running.
+
+        Returns:
+            Response: JSON response with a welcome message and the current environment.
+        """
+        env = os.getenv("FLASK_ENV", "development")
+        return jsonify({
+            "message": "Welcome to the App API!",
+            "environment": env
+        })
+
+    return app
+
+if __name__ == "__main__":
+    app = create_app()
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)), debug=(os.getenv("FLASK_ENV") != "production"))

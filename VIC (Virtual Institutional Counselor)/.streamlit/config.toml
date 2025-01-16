@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#FF6B6B"  # Changed to coral red
+backgroundColor = "#2C3E50"
+secondaryBackgroundColor = "#34495E"
+textColor = "#ECF0F1"
+font = "sans serif"

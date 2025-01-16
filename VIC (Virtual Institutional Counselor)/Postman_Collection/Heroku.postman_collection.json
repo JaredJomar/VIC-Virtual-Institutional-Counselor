@@ -1,0 +1,903 @@
+{
+	"info": {
+		"_postman_id": "a7bf13fa-bce1-40b1-8f9f-5c8b310fc54e",
+		"name": "Heroku",
+		"description": "Class:  \nFuncionan:  \ncreate  \nget all  \nget by id  \ndelete  \nupdate\n\nLocal Statistics:  \nFunciona:  \na. /room//capacity: Top 3 rooms per building with the most capacity.  \nb. /room//ratio: Top 3 room with the most student-to-capacity ratio.\n\nc. /room//classes: Top 3 classes that were taught the most per room. (id = room id)  \nd. /classes//: Top 3 most taught classes per semester per year.  \nExamples. e.g. /classes/2024/fall, /classes/2023/spring, etc.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34120864",
+		"_collection_link": "https://universal-zodiac-905363.postman.co/workspace/No-Pienso-Repetir~5bafbdd8-951c-455d-827c-8196d126e5dc/collection/34120864-a7bf13fa-bce1-40b1-8f9f-5c8b310fc54e?action=share&source=collection_link&creator=34120864"
+	},
+	"item": [
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "Work"
+			},
+			"response": []
+		},
+		{
+			"name": "create_class",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cname\": \"Test\",\r\n    \"ccode\": \"3015\",\r\n    \"cdesc\": \"Introduction to Computer Programming I\",\r\n    \"term\": \"First Semester, Second Semester\",\r\n    \"years\": \"Every Year\",\r\n    \"cred\": 4,\r\n    \"csyllabus\": \"https://www.uprm.edu/cse/wp-content/uploads/sites/153/2020/03/CIIC-3015-Introduction-to-Computer-Programming-I.pdf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/class",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "class"
+					]
+				},
+				"description": "Fix"
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_class",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/class",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "class"
+					]
+				},
+				"description": "Work"
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_class_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/class/38",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "class",
+						"38"
+					]
+				},
+				"description": "Work"
+			},
+			"response": []
+		},
+		{
+			"name": "update_class_by_id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cname\": \"Test1\",\r\n    \"ccode\": \"3015\",\r\n    \"cdesc\": \"Introduction to Computer Programming I\",\r\n    \"term\": \"First Semester, Second Semester\",\r\n    \"years\": \"Every Year\",\r\n    \"cred\": 4,\r\n    \"csyllabus\": \"https://www.uprm.edu/cse/wp-content/uploads/sites/153/2020/03/CIIC-3015-Introduction-to-Computer-Programming-I.pdf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/class/38",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "class",
+						"38"
+					]
+				},
+				"description": "Fix Data in table"
+			},
+			"response": []
+		},
+		{
+			"name": "delete_class_by_id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/class/38",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "class",
+						"38"
+					]
+				},
+				"description": "Fix"
+			},
+			"response": []
+		},
+		{
+			"name": "local_top3_rooms_capacity",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/room/Monzon/capacity",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "room",
+						"Monzon",
+						"capacity"
+					]
+				},
+				"description": "Fix Data in table"
+			},
+			"response": []
+		},
+		{
+			"name": "local_top3_room_ratio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/room/Monzon/ratio",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "room",
+						"Monzon",
+						"ratio"
+					]
+				},
+				"description": "Fix Data in table"
+			},
+			"response": []
+		},
+		{
+			"name": "local_top3_room_classes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/room/1/classes",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "room",
+						"1",
+						"classes"
+					]
+				},
+				"description": "Fix Data in table"
+			},
+			"response": []
+		},
+		{
+			"name": "local_top3_classes_by_semester",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/classes/2023/Spring",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "classes",
+						"2023",
+						"Spring"
+					]
+				},
+				"description": "Fix Data in table"
+			},
+			"response": []
+		},
+		{
+			"name": "create_section",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"room_id\": 8,\r\n    \"class_id\": 10,\r\n    \"master_id\": 9,\r\n    \"semester\": \"Test\",\r\n    \"year\": 2025,\r\n    \"capacity\": 24\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/section",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "section"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_section",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ccode\": \"100\",\r\n    \"cdays\": \"MJ\",\r\n    \"endtime\": \"Thu, 01 Jan 1970 08:45:00 GMT\",\r\n    \"starttime\": \"Thu, 01 Jan 1970 07:30:00 GMT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/section",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "section"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_section_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/section/131",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "section",
+						"131"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_section_by_id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"room_id\": 8,\r\n    \"class_id\": 10,\r\n    \"master_id\": 3,\r\n    \"semester\": \"Test1\",\r\n    \"year\": 2025,\r\n    \"capacity\": 24\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/section/131",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "section",
+						"131"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_section_by_id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/section/131",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "section",
+						"131"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_meeting",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ccode\": \"100\",\r\n    \"cdays\": \"LWV\",\r\n    \"starttime\": \"10:30:00\",\r\n    \"endtime\": \"11:20:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/meeting",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "meeting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_meeting",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/meeting",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "meeting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_meeting_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/meeting/18",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "meeting",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_meeting_by_id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ccode\": \"25\",\r\n    \"cdays\": \"J\",\r\n    \"endtime\": \"08:45:00\",\r\n    \"starttime\": \"07:30:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/meeting/18",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "meeting",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_meeting_by_id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/meeting/18",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "meeting",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"building\": \"Stefani\",\r\n    \"capacity\": 30,\r\n    \"room_number\": \"401\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/room",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "room"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_room",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ccode\": \"100\",\r\n    \"cdays\": \"MJ\",\r\n    \"endtime\": \"Thu, 01 Jan 1970 08:45:00 GMT\",\r\n    \"starttime\": \"Thu, 01 Jan 1970 07:30:00 GMT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/room",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "room"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_room_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/room/26",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "room",
+						"26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_room_by_id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"building\": \"Stefani\",\r\n    \"capacity\": 10,\r\n    \"room_number\": \"500\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/room/26",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "room",
+						"26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_room_by_id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/room/26",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "room",
+						"26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_requisite",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"classid\":3,\n    \"reqid\":2,\n    \"prereq\":true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/requisite",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "requisite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_requisites",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/requisite",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "requisite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_requisite_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/requisite/3/2",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "requisite",
+						"3",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_requisite",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"prereq\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/requisite/3/2",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "requisite",
+						"3",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_requisite_by_id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/requisite/3/2",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "requisite",
+						"3",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "global_top5_meeting",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/most/meeting",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "most",
+						"meeting"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "global_top3_most_prerequisite",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/most/prerequisite",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "most",
+						"prerequisite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "global_top3_least_classes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/least/classes",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "least",
+						"classes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "global_section_year",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://nprdb-app-test-fall2024-5e22b455dcd3.herokuapp.com/no-pensamos-repetir-npr/section/year",
+					"protocol": "https",
+					"host": [
+						"nprdb-app-test-fall2024-5e22b455dcd3",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"no-pensamos-repetir-npr",
+                        "section",
+						"year"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

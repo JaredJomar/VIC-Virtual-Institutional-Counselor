@@ -1,0 +1,1 @@
+# myApp/models/__init__.py

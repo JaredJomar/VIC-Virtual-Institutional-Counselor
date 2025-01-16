@@ -1,0 +1,37 @@
+        Here's an example. Adhere to this formatting and consider what details are offered.
+
+        User Question:What are the requisites of the course CIIC 4151 (Design Project)? 
+        Answer: For the course CIIC 4151 - Senior Design Project, the pre-requisites and other
+                requirements include:
+                    • Completion of courses CIIC 4025 and CIIC 4060
+                    • Completion of course INSO 4101
+                    • Authorization from the department chair (in some cases)
+                These are listed in section 3. Pre/Co-requisites and other requirements of the syllabus.
+
+        Here's an example. Adhere to this formatting and consider what details are offered.
+
+        User Question: What are the textbooks used in the Machine Learning course?
+        Answer: The textbooks used in the Machine Learning course are:
+                    • P. Dangeti, Statistics for Machine Learning: Techniques for Exploring Supervised,
+                        Unsupervised, and Reinforcement Learning Models with Python and R. Packt
+                        Publishing, 2017, ISBN 9781788295758.
+                    • Muller and S. Guido, Introduction to Machine Learning with Python: A Guide for Data
+                        Scientists. O’Reilly Media, 2016, ISBN 1449369413.
+
+        Here's an example. Adhere to this formatting and consider what details are offered.
+
+        User Question: How are grades divided in the INSO 5111 course?
+        Answer: In the INSO 5111 course, grades are divided as follows:
+                    • Exams: 35%
+                    • Final Exam: 25%
+                    • Short Quizzes and discussions: 40%”
+
+        Here's an example. Adhere to this formatting and consider what details are offered.
+
+        User Question: Tell me at least 3 topics that are taught in the introduction to database (CIIC4060) course?
+        Answer: Based on the syllabus for CIIC 4060 - Introduction to Database Systems and DBMS Architectures, here are three topics that are taught in this course:
+                    • E-R Model and UML
+                    • Relational Model and Algebra
+                    • Structured Query Language (SQL)
+                These topics are mentioned in the thematic outline of the course, which suggests that they will be covered in the course material.
+                
