@@ -100,12 +100,3 @@ Connect to the Heroku-hosted database using DataGrip:
 ![DataGrip Screenshot](https://github.com/user-attachments/assets/746f092b-7e23-42d8-b2f0-8d335098a861)
 
 ---
-
-## **Important Notes**
-- Always verify your database connection.  
-- Test the app thoroughly after deploying any updates.  
-- Credentials are subject to change; notify the team if access issues arise.
-
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/jqhbANi7)
-
----
