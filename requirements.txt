@@ -15,7 +15,7 @@ bcrypt==4.2.1
 PyJWT==2.10.0
 pypdf==4.2.0
 langchain==0.3.8
-transformers==4.48.0
+transformers==4.50.0
 sentence-transformers==2.2.2
 huggingface-hub==0.23.2
 langchain-ollama==0.2.0
@@ -25,5 +25,5 @@ langchain-ollama==0.2.0
 
 # CPU-only PyTorch
 --extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.6.0
+torch==2.7.0
 torchvision==0.17.1+cpu
